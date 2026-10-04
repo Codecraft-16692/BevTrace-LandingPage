@@ -53,9 +53,9 @@ This Landing Page was built with standard web technologies, prioritizing perform
 
 | Name | Code | Role |
 |---|---|---|
-| Mauricio Sebastian Castillo Yataco | <U202113229> | Software Engineer |
-| <Full name> | <U20XXXXXXX> | Software Engineer |
-| <Full name> | <U20XXXXXXX> | Software Engineer |
+| Mauricio Sebastian Castillo Yataco | U202113229 | Software Engineer |
+| Full name | U20XXXXXXX | Software Engineer |
+| Full name | U20XXXXXXX | Software Engineer |
 
 > Software Engineering students at **Universidad Peruana de Ciencias Aplicadas (UPC)**.
 
