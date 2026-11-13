@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>BevTrace | Trazabilidad inteligente para distribución de bebidas</title>
-<meta name="description" content="BevTrace digitaliza la cadena de suministro de embotelladoras y distribuidoras de bebidas en envases PET no retornables, con gestión operativa, despachos y trazabilidad IoT en tiempo real." />
+<meta name="description" content="BevTrace une la gestión de almacén y despachos con sensores IoT para que embotelladoras y distribuidoras de bebidas en envases PET controlen mermas y trazabilidad en tiempo real." />
+<link rel="icon" type="image/png" href="assets/logos/logo-mark-white.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,6 +18,7 @@
 
 <main class="landing-page">
 
+<!-- ═════════ HEADER ═════════ -->
 <header class="site-header" data-site-header>
   <div class="site-header__inner">
     <a class="site-header__brand" href="#home" data-hover>
@@ -24,12 +26,13 @@
       <span class="site-header__wordmark">BevTrace</span>
     </a>
 
-    <nav class="site-header__nav liquid-glass liquid-glass--deep" data-nav>
+    <nav class="site-header__nav liquid-glass liquid-glass--deep" data-nav aria-label="Principal">
       <a href="#home" class="site-header__link site-header__link--active" data-hover data-nav-link data-i18n="nav.home">Inicio</a>
-      <a href="#producto" class="site-header__link" data-hover data-nav-link data-i18n="nav.how">Cómo funciona</a>
-      <a href="#segmentos" class="site-header__link" data-hover data-nav-link data-i18n="nav.segments">A quién sirve</a>
-      <a href="#dominio" class="site-header__link" data-hover data-nav-link data-i18n="nav.domain">Dominio</a>
+      <a href="#problema" class="site-header__link" data-hover data-nav-link data-nav-also="solucion" data-i18n="nav.solution">Solución</a>
+      <a href="#funciones" class="site-header__link" data-hover data-nav-link data-nav-also="segmentos resultados" data-i18n="nav.features">Funciones</a>
+      <a href="#planes" class="site-header__link" data-hover data-nav-link data-i18n="nav.plans">Planes</a>
       <a href="#equipo" class="site-header__link" data-hover data-nav-link data-i18n="nav.team">Equipo</a>
+      <a href="#contacto" class="site-header__link" data-hover data-nav-link data-nav-also="cierre" data-i18n="nav.contact">Contacto</a>
     </nav>
 
     <div class="site-header__right">
@@ -38,33 +41,35 @@
         <button type="button" class="lang-switch__option" data-lang-option="en">EN</button>
       </div>
       <span class="magnetic-target">
-        <a href="https://bev-trace-front-end.vercel.app" class="site-header__cta liquid-glass liquid-glass--cyan" data-hover data-liquid-glass data-i18n="nav.cta">Solicitar demo</a>
+        <a href="https://bev-trace-front-end.vercel.app" class="btn btn--primary btn--sm" data-hover data-i18n="cta.primary">Probar BevTrace</a>
       </span>
     </div>
 
-    <button class="site-header__burger liquid-glass liquid-glass--deep" type="button" data-drawer-toggle aria-label="Abrir menú" aria-expanded="false">
+    <button class="site-header__burger liquid-glass liquid-glass--deep" type="button" data-drawer-toggle data-i18n-attr="aria-label:nav.open" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span>
     </button>
   </div>
 
   <div class="drawer-backdrop" data-drawer-backdrop></div>
   <aside class="drawer" data-drawer>
-    <button class="drawer__close" type="button" data-drawer-close aria-label="Cerrar menú">&times;</button>
-    <div class="lang-switch lang-switch--drawer" data-hover>
+    <button class="drawer__close" type="button" data-drawer-close data-i18n-attr="aria-label:nav.close" aria-label="Cerrar menú">&times;</button>
+    <div class="lang-switch lang-switch--drawer">
       <button type="button" class="lang-switch__option" data-lang-option="es">ES</button>
       <button type="button" class="lang-switch__option" data-lang-option="en">EN</button>
     </div>
     <nav class="drawer__links">
       <a href="#home" data-drawer-link data-i18n="nav.home">Inicio</a>
-      <a href="#producto" data-drawer-link data-i18n="nav.how">Cómo funciona</a>
-      <a href="#segmentos" data-drawer-link data-i18n="nav.segments">A quién sirve</a>
-      <a href="#dominio" data-drawer-link data-i18n="nav.domain">Dominio</a>
+      <a href="#problema" data-drawer-link data-i18n="nav.solution">Solución</a>
+      <a href="#funciones" data-drawer-link data-i18n="nav.features">Funciones</a>
+      <a href="#planes" data-drawer-link data-i18n="nav.plans">Planes</a>
       <a href="#equipo" data-drawer-link data-i18n="nav.team">Equipo</a>
+      <a href="#contacto" data-drawer-link data-i18n="nav.contact">Contacto</a>
     </nav>
-    <a href="#cta" class="btn btn--warm" data-drawer-link data-i18n="nav.cta">Solicitar demo</a>
+    <a href="https://bev-trace-front-end.vercel.app" class="btn btn--primary" data-i18n="cta.primary">Probar BevTrace</a>
   </aside>
 </header>
 
+<!-- ═════════ HERO ═════════ -->
 <section class="hero" id="home">
   <div class="hero__bg" data-parallax-bg aria-hidden="true"></div>
   <img src="assets/logos/logo-mark-white.png" alt="" class="hero__mark" data-parallax-mark aria-hidden="true" />
@@ -72,16 +77,14 @@
   <div class="hero__content">
     <p class="eyebrow eyebrow--light" data-reveal data-i18n="hero.eyebrow">SaaS logístico · Equipo CodeCraft</p>
     <h1 class="hero__title" data-reveal data-i18n="hero.title">Cero mermas.<br />Trazabilidad total.</h1>
-    <p class="hero__subtitle" data-reveal data-i18n="hero.subtitle">
-      BevTrace digitaliza la cadena de suministro de embotelladoras y distribuidoras de bebidas en envases PET no retornables, uniendo gestión operativa e Internet de las Cosas en un solo sistema.
-    </p>
+    <p class="hero__subtitle" data-reveal data-i18n="hero.subtitle">BevTrace une la gestión de almacén y despachos con sensores IoT para que embotelladoras y distribuidoras de bebidas en envases PET sepan, en tiempo real, dónde está cada lote y qué se pierde en el camino.</p>
 
-    <div class="hero__actions" data-reveal>
-      <span class="magnetic-target" data-magnetic data-magnetic-max="16">
-        <a href="#solucion" class="btn btn--warm" data-hover data-i18n="hero.cta1">Ver la solución</a>
+    <div class="cta-group" data-reveal>
+      <span class="magnetic-target" data-magnetic data-magnetic-max="14">
+        <a href="https://bev-trace-front-end.vercel.app" class="btn btn--primary" data-hover data-i18n="cta.primary">Probar BevTrace</a>
       </span>
-      <span class="magnetic-target" data-magnetic data-magnetic-max="16">
-        <a href="#equipo" class="btn btn--outline-light" data-hover data-i18n="hero.cta2">Conoce al equipo</a>
+      <span class="magnetic-target" data-magnetic data-magnetic-max="14">
+        <a href="#problema" class="btn btn--ghost-light" data-hover data-i18n="cta.howItWorks">Ver cómo funciona</a>
       </span>
     </div>
   </div>
@@ -90,327 +93,239 @@
     <span data-i18n="hero.credit">Proyecto académico de Ingeniería de Software · CodeCraft</span>
     <div class="hero__scroll-cue" aria-hidden="true"><span></span></div>
   </div>
-
-  <div class="hero__transition" aria-hidden="true"></div>
 </section>
 
-<section class="intro" id="producto">
-  <svg class="intro__wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,90 C240,15 480,10 720,45 C960,80 1200,85 1440,15 L1440,0 L0,0 Z" fill="#E4F6F5"></path>
-  </svg>
-  <div class="intro__glow" aria-hidden="true"></div>
-  <div class="container intro__container">
-    <p class="eyebrow" data-reveal data-i18n="intro.eyebrow">Por qué existimos</p>
-    <h2 class="intro__title" data-reveal data-i18n="intro.title">Una plataforma pensada para quien controla el almacén y quien decide sobre la operación</h2>
-  </div>
-
-  <div class="marquee" data-marquee aria-hidden="true">
-    <div class="marquee__track">
-      <div class="marquee__group">
-        <span data-i18n="marquee.item1">Gestión de inventarios</span><span class="marquee__dot"></span>
-        <span data-i18n="marquee.item2">Gestión de despachos</span><span class="marquee__dot"></span>
-        <span data-i18n="marquee.item3">Trazabilidad IoT</span><span class="marquee__dot"></span>
-        <span data-i18n="marquee.item4">Alertas automáticas</span><span class="marquee__dot"></span>
-      </div>
-      <div class="marquee__group">
-        <span data-i18n="marquee.item1">Gestión de inventarios</span><span class="marquee__dot"></span>
-        <span data-i18n="marquee.item2">Gestión de despachos</span><span class="marquee__dot"></span>
-        <span data-i18n="marquee.item3">Trazabilidad IoT</span><span class="marquee__dot"></span>
-        <span data-i18n="marquee.item4">Alertas automáticas</span><span class="marquee__dot"></span>
-      </div>
+<div class="marquee" data-marquee aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span data-i18n="marquee.item1">Gestión de inventarios</span><span class="marquee__dot"></span>
+      <span data-i18n="marquee.item2">Gestión de despachos</span><span class="marquee__dot"></span>
+      <span data-i18n="marquee.item3">Trazabilidad IoT</span><span class="marquee__dot"></span>
+      <span data-i18n="marquee.item4">Alertas automáticas</span><span class="marquee__dot"></span>
+    </div>
+    <div class="marquee__group">
+      <span data-i18n="marquee.item1">Gestión de inventarios</span><span class="marquee__dot"></span>
+      <span data-i18n="marquee.item2">Gestión de despachos</span><span class="marquee__dot"></span>
+      <span data-i18n="marquee.item3">Trazabilidad IoT</span><span class="marquee__dot"></span>
+      <span data-i18n="marquee.item4">Alertas automáticas</span><span class="marquee__dot"></span>
     </div>
   </div>
-</section>
+</div>
 
+<!-- ═════════ 1 · PROBLEMA ═════════ -->
 <section class="problem" id="problema">
-  <div class="container problem__layout">
-    <div class="problem__content" data-reveal>
+  <div class="container">
+    <div class="section-head" data-reveal>
       <p class="eyebrow" data-i18n="problem.eyebrow">El problema</p>
-      <h2 class="section-title problem__title" data-i18n="problem.title">El registro manual no debería decidir cuánto pierdes en mermas</h2>
-      <p class="problem__description" data-i18n="problem.description">
-        A pesar de los altos volúmenes de producción, almacenes y distribuidoras de bebidas en envases PET no retornables operan con procesos manuales que impiden un control estricto de la mercadería.
-      </p>
-      <div class="problem__actions">
-        <span class="magnetic-target" data-magnetic data-magnetic-max="12">
-          <a href="#solucion" class="btn btn--outline-dark" data-hover data-i18n="problem.cta">Ver la solución</a>
+      <h2 class="section-title" data-i18n="problem.title">Hoy el control de la mercadería depende de planillas y revisiones manuales</h2>
+      <p class="section-lede" data-i18n="problem.description">Las embotelladoras y distribuidoras de bebidas en envases PET no retornables mueven grandes volúmenes, pero registran y verifican casi todo a mano. El resultado: se pierde producto y nadie sabe exactamente dónde ni cuándo.</p>
+    </div>
+
+    <div class="pain-grid">
+      <article class="pain-card" data-reveal>
+        <span class="icon-bubble icon-bubble--warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </span>
-      </div>
+        <h3 data-i18n="pain1.title">Mermas que nadie detecta</h3>
+        <p data-i18n="pain1.desc">Sin lectura automática ni sensores, las diferencias entre el inventario registrado y el real se descubren tarde, cuando ya son pérdida.</p>
+      </article>
+      <article class="pain-card" data-reveal>
+        <span class="icon-bubble icon-bubble--warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+        </span>
+        <h3 data-i18n="pain2.title">Despachos desordenados</h3>
+        <p data-i18n="pain2.desc">Vehículos, choferes y rutas se asignan en hojas de cálculo y la carga sale sin validarse contra el sistema.</p>
+      </article>
+      <article class="pain-card" data-reveal>
+        <span class="icon-bubble icon-bubble--warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+        </span>
+        <h3 data-i18n="pain3.title">Cero visibilidad en ruta</h3>
+        <p data-i18n="pain3.desc">Cuando el camión sale, nadie sabe en qué estado viaja el producto ni si llegará completo.</p>
+      </article>
     </div>
 
-    <div class="accordion" data-accordion>
-      <article class="accordion__item accordion__item--active" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="true">
-          <span data-i18n="accordion.q1">Qué problema existe</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a1">Pérdida de inventario (mermas), desorganización en la asignación de despachos y nula trazabilidad del estado físico del producto durante las operaciones logísticas.</p>
-        </div>
-      </article>
-
-      <article class="accordion__item" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false">
-          <span data-i18n="accordion.q2">Por qué ocurre</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a2">Los procesos dependen de verificaciones manuales y desconectadas. No existe un ecosistema que integre la lectura masiva de productos ni el monitoreo ambiental de la carga en los vehículos.</p>
-        </div>
-      </article>
-
-      <article class="accordion__item" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false">
-          <span data-i18n="accordion.q3">Quiénes están involucrados</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a3">Empresas embotelladoras y distribuidoras. Operativamente impacta a los Jefes y Gerentes de Logística, así como a los Operarios de Almacén.</p>
-        </div>
-      </article>
-
-      <article class="accordion__item" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false">
-          <span data-i18n="accordion.q4">Cuándo ocurre</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a4">Durante la preparación de pedidos (picking), la asignación de rutas, la carga de vehículos y el transporte hacia los distribuidores finales.</p>
-        </div>
-      </article>
-
-      <article class="accordion__item" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false">
-          <span data-i18n="accordion.q5">Dónde ocurre</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a5">En los centros de distribución, los almacenes de las embotelladoras y durante la ruta de los camiones de transporte.</p>
-        </div>
-      </article>
-
-      <article class="accordion__item" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false">
-          <span data-i18n="accordion.q6">Cómo se soluciona</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a6">Con una plataforma SaaS que centraliza la información y se integra con hardware IoT (sensores de peso, humedad, temperatura y antenas RFID) para automatizar el registro y monitorear el estado de los envases.</p>
-        </div>
-      </article>
-
-      <article class="accordion__item" data-accordion-item>
-        <button class="accordion__trigger" type="button" data-accordion-trigger aria-expanded="false">
-          <span data-i18n="accordion.q7">Cuánto impacto genera</span>
-          <span class="accordion__icon"></span>
-        </button>
-        <div class="accordion__body" data-accordion-body>
-          <p data-i18n="accordion.a7">Las pérdidas por mermas no detectadas a tiempo y las ineficiencias en despachos representan millones en sobrecostos operativos anuales para la industria de bebidas masivas.</p>
-        </div>
-      </article>
+    <div class="facts" data-reveal>
+      <div class="facts__stat">
+        <strong data-i18n="problem.statValue">Hasta 15%</strong>
+        <span data-i18n="problem.statText">de pérdidas en el sector de bebidas por datos de merma imprecisos y falta de visibilidad en tiempo real.</span>
+      </div>
+      <dl class="facts__list">
+        <div><dt data-i18n="fact1.label">Quién</dt><dd data-i18n="fact1.text">Embotelladoras y distribuidoras: jefes de logística y operarios de almacén.</dd></div>
+        <div><dt data-i18n="fact2.label">Cuándo</dt><dd data-i18n="fact2.text">En el picking, la asignación de rutas, la carga y el transporte.</dd></div>
+        <div><dt data-i18n="fact3.label">Dónde</dt><dd data-i18n="fact3.text">En centros de distribución, almacenes y a lo largo de la ruta.</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
+<!-- ═════════ 2 · SOLUCIÓN + VIDEO DEL PRODUCTO ═════════ -->
 <section class="solution" id="solucion">
-  <div class="container">
-    <div class="solution__card" data-reveal>
-      <p class="eyebrow eyebrow--light" data-i18n="solution.eyebrow">Cómo lo resolvemos</p>
-      <p class="solution__statement" data-i18n="solution.statement">
-        BevTrace centraliza la gestión de inventarios y despachos, permite el monitoreo de los productos en tiempo real e integra telemetría IoT para facilitar la trazabilidad desde el almacén hasta el destino final.
-      </p>
-
-      <div class="solution__metrics">
-        <div class="solution__metric">
-          <strong>70%</strong>
-          <span data-i18n="solution.metric1">de responsables de almacén reduciría la discrepancia entre inventario registrado y real (H1)</span>
-        </div>
-        <div class="solution__metric">
-          <strong>70%</strong>
-          <span data-i18n="solution.metric2">de responsables de logística mejoraría el seguimiento y gestión de despachos (H2)</span>
-        </div>
-        <div class="solution__metric">
-          <strong>80%</strong>
-          <span data-i18n="solution.metric3">de responsables de distribución consultaría correctamente el estado y recorrido del producto (H3)</span>
-        </div>
+  <div class="container solution__layout">
+    <div class="solution__text">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow" data-i18n="solution.eyebrow">La solución</p>
+        <h2 class="section-title" data-i18n="solution.title">Un solo sistema, desde el almacén hasta el destino final</h2>
+        <p class="section-lede" data-i18n="solution.lede">BevTrace centraliza inventarios y despachos e integra telemetría IoT, para registrar, monitorear y decidir sin papeles de por medio.</p>
       </div>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__num">1</span>
+          <div>
+            <h3 data-i18n="step1.title">Registra</h3>
+            <p data-i18n="step1.desc">Escaneo masivo con RFID: pallets y lotes entran al sistema sin conteo manual.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">2</span>
+          <div>
+            <h3 data-i18n="step2.title">Monitorea</h3>
+            <p data-i18n="step2.desc">Sensores de peso, humedad y temperatura reportan desde el vehículo hasta la entrega.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">3</span>
+          <div>
+            <h3 data-i18n="step3.title">Decide</h3>
+            <p data-i18n="step3.desc">Alertas automáticas y un dashboard de KPIs para actuar antes de que haya pérdida.</p>
+          </div>
+        </li>
+      </ol>
     </div>
+
+    <!-- VIDEO 1 · SOBRE EL PRODUCTO
+         Para activarlo: pega el link o el ID de YouTube en data-video (ej. data-video="https://youtu.be/XXXXXXXXXXX") -->
+    <figure class="video-card" data-reveal>
+      <div class="video-slot" data-video-slot data-video="https://www.youtube.com/watch?v=u31qwQUeGuM" data-video-title="BevTrace">
+        <video class="video-slot__cover" autoplay muted loop playsinline poster="assets/videos/poster-office.jpg" aria-hidden="true">
+          <source src="assets/videos/office-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="video-slot__shade"></div>
+        <button type="button" class="video-slot__play" data-video-play data-i18n-attr="aria-label:video.play" aria-label="Reproducir video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>
+        </button>
+        <span class="video-slot__soon" data-i18n="video.soon">Video próximamente</span>
+      </div>
+      <figcaption>
+        <span class="badge badge--cyan" data-i18n="video.productTag">Video del producto</span>
+        <strong data-i18n="video.productTitle">BevTrace en acción</strong>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="features" id="features">
+<!-- ═════════ 3 · FUNCIONES ═════════ -->
+<section class="features" id="funciones">
   <div class="container">
-    <div class="features__head">
-      <p class="eyebrow" data-reveal data-i18n="features.eyebrow">Lo que incluye la plataforma</p>
-      <h2 class="section-title" data-reveal data-i18n="features.title">Seis módulos que resuelven inventario, despacho y trazabilidad</h2>
+    <div class="section-head section-head--center" data-reveal>
+      <p class="eyebrow" data-i18n="features.eyebrow">Funciones</p>
+      <h2 class="section-title" data-i18n="features.title">Seis módulos que resuelven inventario, despacho y trazabilidad</h2>
+      <p class="section-lede" data-i18n="features.lede">Cada módulo corresponde a un dominio del sistema (Domain-Driven Design) y colabora con los demás mediante eventos.</p>
     </div>
-  </div>
 
-  <div class="feature-slider" data-feature-slider>
-    <div class="feature-slider__track" data-feature-track>
-
-      <article class="feature-slide" data-feature-slide>
-        <span class="feature-slide__icon">
+    <div class="feature-grid">
+      <article class="feature-card" data-reveal>
+        <span class="icon-bubble">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
         </span>
         <h3 data-i18n="feature1.title">Gestión de inventarios</h3>
-        <p data-i18n="feature1.desc">Registra, consulta y actualiza el stock por lote, zona de almacén y estado, reduciendo la discrepancia entre lo físico y lo registrado.</p>
+        <p data-i18n="feature1.desc">Registra y actualiza el stock por lote, zona y estado, reduciendo la diferencia entre lo físico y lo registrado.</p>
+        <span class="feature-card__tag">Inventory Management</span>
       </article>
 
-      <article class="feature-slide" data-feature-slide>
-        <span class="feature-slide__icon">
+      <article class="feature-card" data-reveal>
+        <span class="icon-bubble">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="14" height="10" rx="1.5"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="18" cy="19" r="1.8"/></svg>
         </span>
         <h3 data-i18n="feature2.title">Gestión de despachos</h3>
-        <p data-i18n="feature2.desc">Centraliza la asignación de vehículos, choferes y rutas de entrega, autorizando cada despacho antes de que salga del almacén.</p>
+        <p data-i18n="feature2.desc">Asigna vehículo, chofer y ruta, y autoriza cada despacho antes de que salga del almacén.</p>
+        <span class="feature-card__tag">Dispatch Management</span>
       </article>
 
-      <article class="feature-slide" data-feature-slide>
-        <span class="feature-slide__icon">
+      <article class="feature-card feature-card--core" data-reveal>
+        <span class="feature-card__ribbon" data-i18n="feature3.ribbon">Núcleo del sistema</span>
+        <span class="icon-bubble">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
         </span>
         <h3 data-i18n="feature3.title">Trazabilidad de productos</h3>
-        <p data-i18n="feature3.desc">Sigue el recorrido de cada lote desde el almacén hasta el destino final, con puntos de control y validación de entrega.</p>
+        <p data-i18n="feature3.desc">Sigue cada lote con puntos de control en ruta y entrega validada con firma del cliente.</p>
+        <span class="feature-card__tag">Product Traceability</span>
       </article>
 
-      <article class="feature-slide" data-feature-slide>
-        <span class="feature-slide__icon">
+      <article class="feature-card" data-reveal>
+        <span class="icon-bubble">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5.5 5.5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none"/></svg>
         </span>
         <h3 data-i18n="feature4.title">Monitoreo mediante IoT</h3>
-        <p data-i18n="feature4.desc">Sensores de peso, humedad y temperatura, junto a antenas de lectura RFID, transmiten telemetría en tiempo real desde los vehículos.</p>
+        <p data-i18n="feature4.desc">Sensores y antenas RFID envían ubicación, estado de conexión y condiciones de la carga en tiempo real.</p>
+        <span class="feature-card__tag">IoT Telemetry</span>
       </article>
 
-      <article class="feature-slide" data-feature-slide>
-        <span class="feature-slide__icon">
+      <article class="feature-card" data-reveal>
+        <span class="icon-bubble">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.4c0 .8-.3 1.6-.9 2.2L4.5 15.2c-.7.7-.2 1.8.7 1.8h13.6c.9 0 1.4-1.1.7-1.8l-1.6-1.6c-.6-.6-.9-1.4-.9-2.2V8a5 5 0 0 0-5-5z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
         </span>
         <h3 data-i18n="feature5.title">Alertas de incidencias</h3>
-        <p data-i18n="feature5.desc">Detecta desvíos de ruta, retrasos o anomalías durante el transporte y notifica automáticamente al equipo responsable.</p>
+        <p data-i18n="feature5.desc">Un motor de reglas detecta desvíos o anomalías, avisa al equipo y registra la acción correctiva.</p>
+        <span class="feature-card__tag">Incident &amp; Alert Management</span>
       </article>
 
-      <article class="feature-slide" data-feature-slide>
-        <span class="feature-slide__icon">
+      <article class="feature-card" data-reveal>
+        <span class="icon-bubble">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V5M16 19v-7M4 19h16"/></svg>
         </span>
         <h3 data-i18n="feature6.title">Dashboard de indicadores</h3>
-        <p data-i18n="feature6.desc">Visualiza KPIs de mermas, despachos y trazabilidad consolidados en tiempo real para apoyar la toma de decisiones gerenciales.</p>
+        <p data-i18n="feature6.desc">KPIs de mermas, despachos y trazabilidad consolidados para decidir con datos.</p>
+        <span class="feature-card__tag">Operations Analytics</span>
       </article>
-
-    </div>
-
-    <div class="feature-slider__controls">
-      <button type="button" class="feature-slider__arrow" data-feature-prev aria-label="Anterior">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <div class="feature-slider__dots" data-feature-dots></div>
-      <button type="button" class="feature-slider__arrow" data-feature-next aria-label="Siguiente">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
     </div>
   </div>
 </section>
 
-<section class="outcomes" id="resultados">
-  <div class="outcomes__banner">
-    <video class="outcomes__video" autoplay muted loop playsinline poster="assets/videos/poster-bottle.jpg">
-      <source src="assets/videos/bottle-loop.mp4" type="video/mp4" />
-    </video>
-    <div class="outcomes__banner-overlay"></div>
-    <div class="container outcomes__banner-content">
-      <p class="eyebrow eyebrow--light" data-reveal data-i18n="outcomes.eyebrow">Resultados que buscamos validar</p>
-      <div class="outcomes__metrics" data-reveal>
-        <div class="outcomes__metric">
-          <strong>25%</strong>
-          <span data-i18n="outcomes.metric1">menos mermas no justificadas al detectar anomalías físicas en tránsito con sensores IoT</span>
-        </div>
-        <div class="outcomes__metric">
-          <strong>30%</strong>
-          <span data-i18n="outcomes.metric2">más velocidad de despacho al registrar pallets completos con lectura masiva</span>
-        </div>
-        <div class="outcomes__metric">
-          <strong>40%</strong>
-          <span data-i18n="outcomes.metric3">más retención de clientes corporativos gracias al dashboard de KPI en tiempo real</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container outcomes__recommendation">
-    <div class="outcomes__rec-media" data-reveal>
-      <video class="outcomes__video outcomes__video--rounded" autoplay muted loop playsinline poster="assets/videos/poster-office.jpg">
-        <source src="assets/videos/office-loop.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="outcomes__rec-content" data-reveal>
-      <p class="eyebrow" data-i18n="rec.eyebrow">Una hipótesis de BevTrace</p>
-      <h3 data-i18n="rec.title">Dashboard de KPI en tiempo real para gerentes de logística</h3>
-      <p data-i18n="rec.paragraph">Si los Gerentes de Logística obtienen visibilidad gerencial inmediata con un dashboard de KPI en tiempo real, esperamos aumentar la retención de clientes corporativos que hoy dependen de reportes manuales dispersos.</p>
-      <span class="magnetic-target" data-magnetic data-magnetic-max="14">
-        <a href="#dominio" class="btn btn--outline-dark" data-hover data-i18n="rec.cta">Ver arquitectura del dominio</a>
-      </span>
-    </div>
-  </div>
-</section>
-
-<section class="product-preview" id="producto-preview">
-  <div class="container product-preview__inner">
-    <img src="assets/logos/logo-full-white.png" alt="BevTrace" class="product-preview__logo" />
-    <h2 data-reveal data-i18n="product.title">Así se verá BevTrace por dentro</h2>
-
-    <div class="product-preview__mockup" data-reveal aria-hidden="true">
-      <div class="product-preview__mockup-bar">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="product-preview__mockup-body">
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="6" width="52" height="52" rx="6"/><path d="M6 20h52M18 6v14"/><circle cx="34" cy="38" r="9"/><path d="M41 45l7 7"/></svg>
-        <span class="product-preview__note" data-i18n="product.note">Vista previa del dashboard operativo · próximamente</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ═════════ 4 · PARA QUIÉN ═════════ -->
 <section class="segments" id="segmentos">
-  <div class="container segments__head">
-    <p class="eyebrow" data-reveal data-i18n="segments.eyebrow">A quién servimos</p>
-    <h2 class="section-title" data-reveal data-i18n="segments.title">Dos segmentos, un solo sistema</h2>
-    <p class="segments__lede" data-reveal data-i18n="segments.lede">Un Buyer Persona que decide la compra y un User Persona que opera la plataforma cada día.</p>
-  </div>
-
   <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow" data-i18n="segments.eyebrow">Para quién es</p>
+      <h2 class="section-title" data-i18n="segments.title">Dos perfiles, un solo sistema</h2>
+      <p class="section-lede" data-i18n="segments.lede">Quien decide la compra y quien opera la plataforma cada día.</p>
+    </div>
+
     <div class="segments-pager" data-segments-pager>
       <div class="segments-pager__viewport">
-        <div class="segments-pager__track" data-segments-track>
+        <div class="segments-pager__track">
 
-          <article class="segments-pager__slide segments-pager__slide--buyer is-active" data-segments-slide>
+          <article class="segments-pager__slide is-active" data-segments-slide>
             <div class="segments-pager__text">
-              <span class="badge badge--cyan" data-i18n="seg1.tag">Buyer Persona</span>
+              <span class="badge badge--cyan" data-i18n="seg1.tag">Quien decide</span>
               <h3 data-i18n="seg1.title">Jefes y Gerentes de Logística</h3>
-              <p class="segments-pager__profile" data-i18n="seg1.profile">35–55 años · Ing. Industrial / Administración · Supply Chain Management</p>
+              <p class="segments-pager__profile" data-i18n="seg1.profile">35–55 años · Ing. Industrial / Administración</p>
               <ul>
-                <li data-i18n="seg1.li1">Necesitan visibilidad total de la operación y KPIs actualizados al segundo para reportar a la alta gerencia.</li>
-                <li data-i18n="seg1.li2">Interactúan con el Dashboard de KPI, las reglas de negocio y los reportes de trazabilidad IoT.</li>
-                <li data-i18n="seg1.li3">Buscan retorno de inversión (ROI) a través de la optimización de procesos.</li>
+                <li data-i18n="seg1.li1">Necesitan visibilidad total de la operación y KPIs actualizados para reportar a la gerencia.</li>
+                <li data-i18n="seg1.li2">Usan el dashboard de KPIs, las reglas de negocio y los reportes de trazabilidad.</li>
+                <li data-i18n="seg1.li3">Buscan retorno de inversión optimizando procesos.</li>
               </ul>
             </div>
             <div class="segments-pager__media">
               <svg viewBox="0 0 220 220" aria-hidden="true">
-                <circle cx="110" cy="110" r="104" fill="#00A8CC" opacity="0.08"/>
+                <circle cx="110" cy="110" r="104" fill="#0D5C63" opacity="0.08"/>
                 <rect x="46" y="60" width="128" height="92" rx="10" fill="none" stroke="#0D5C63" stroke-width="3"/>
-                <path d="M62 132l24-28 20 16 26-34 26 22" fill="none" stroke="#00A8CC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M62 132l24-28 20 16 26-34 26 22" fill="none" stroke="#F9A825" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="110" cy="46" r="18" fill="none" stroke="#0D5C63" stroke-width="3"/>
                 <path d="M92 176c0-14 8-24 18-24s18 10 18 24" fill="none" stroke="#0D5C63" stroke-width="3" stroke-linecap="round"/>
               </svg>
             </div>
           </article>
 
-          <article class="segments-pager__slide segments-pager__slide--user" data-segments-slide>
+          <article class="segments-pager__slide" data-segments-slide>
             <div class="segments-pager__text">
-              <span class="badge badge--petrol" data-i18n="seg2.tag">User Persona</span>
+              <span class="badge badge--petrol" data-i18n="seg2.tag">Quien opera</span>
               <h3 data-i18n="seg2.title">Operarios y Supervisores de Almacén</h3>
               <p class="segments-pager__profile" data-i18n="seg2.profile">20–45 años · educación técnica o secundaria completa</p>
               <ul>
-                <li data-i18n="seg2.li1">Necesitan herramientas rápidas que no entorpezcan su labor física.</li>
-                <li data-i18n="seg2.li2">Usan escáneres y antenas de lectura masiva, validando la carga contra el sistema antes del despacho.</li>
+                <li data-i18n="seg2.li1">Necesitan herramientas rápidas que no entorpezcan su trabajo físico.</li>
+                <li data-i18n="seg2.li2">Usan escáneres y antenas de lectura masiva para validar la carga antes del despacho.</li>
                 <li data-i18n="seg2.li3">Buscan interfaces claras que eliminen el conteo manual repetitivo.</li>
               </ul>
             </div>
@@ -418,12 +333,12 @@
               <svg viewBox="0 0 220 220" aria-hidden="true">
                 <circle cx="110" cy="110" r="104" fill="#0D5C63" opacity="0.08"/>
                 <rect x="50" y="86" width="70" height="56" rx="6" fill="none" stroke="#0D5C63" stroke-width="3"/>
-                <rect x="60" y="96" width="20" height="16" rx="2" fill="#00A8CC" opacity="0.5"/>
-                <rect x="86" y="96" width="20" height="16" rx="2" fill="#00A8CC" opacity="0.5"/>
-                <path d="M130 92l30-14M130 110l34 2M130 128l30 14" fill="none" stroke="#00A8CC" stroke-width="3" stroke-linecap="round"/>
-                <circle cx="164" cy="78" r="4" fill="#00A8CC"/>
-                <circle cx="168" cy="112" r="4" fill="#00A8CC"/>
-                <circle cx="164" cy="146" r="4" fill="#00A8CC"/>
+                <rect x="60" y="96" width="20" height="16" rx="2" fill="#F9A825" opacity="0.6"/>
+                <rect x="86" y="96" width="20" height="16" rx="2" fill="#F9A825" opacity="0.6"/>
+                <path d="M130 92l30-14M130 110l34 2M130 128l30 14" fill="none" stroke="#0D5C63" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="164" cy="78" r="4" fill="#F9A825"/>
+                <circle cx="168" cy="112" r="4" fill="#F9A825"/>
+                <circle cx="164" cy="146" r="4" fill="#F9A825"/>
                 <circle cx="85" cy="60" r="16" fill="none" stroke="#0D5C63" stroke-width="3"/>
                 <path d="M68 172c0-14 8-24 17-24s17 10 17 24" fill="none" stroke="#0D5C63" stroke-width="3" stroke-linecap="round"/>
               </svg>
@@ -434,201 +349,228 @@
       </div>
 
       <div class="segments-pager__controls">
-        <button type="button" class="segments-pager__arrow" data-segments-prev aria-label="Anterior">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+        <button type="button" class="segments-pager__arrow" data-segments-prev data-i18n-attr="aria-label:segments.prev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
         <div class="segments-pager__count"><span data-segments-current>01</span> / <span data-segments-total>02</span></div>
-        <button type="button" class="segments-pager__arrow" data-segments-next aria-label="Siguiente">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        <button type="button" class="segments-pager__arrow" data-segments-next data-i18n-attr="aria-label:segments.next" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="domain" id="dominio">
+<!-- ═════════ 5 · RESULTADOS (video en loop de fondo) ═════════ -->
+<section class="outcomes" id="resultados">
+  <video class="outcomes__video" autoplay muted loop playsinline poster="assets/videos/poster-bottle.jpg" aria-hidden="true">
+    <source src="assets/videos/bottle-loop.mp4" type="video/mp4" />
+  </video>
+  <div class="outcomes__overlay"></div>
+  <div class="container outcomes__content">
+    <p class="eyebrow eyebrow--light" data-reveal data-i18n="outcomes.eyebrow">Lo que buscamos validar</p>
+    <div class="outcomes__metrics" data-reveal>
+      <div class="outcomes__metric">
+        <strong>25%</strong>
+        <span data-i18n="outcomes.metric1">menos mermas no justificadas al detectar anomalías físicas en tránsito con sensores IoT</span>
+      </div>
+      <div class="outcomes__metric">
+        <strong>30%</strong>
+        <span data-i18n="outcomes.metric2">más velocidad de despacho al registrar pallets completos con lectura masiva</span>
+      </div>
+      <div class="outcomes__metric">
+        <strong>40%</strong>
+        <span data-i18n="outcomes.metric3">más retención de clientes corporativos gracias al dashboard de KPIs en tiempo real</span>
+      </div>
+    </div>
+    <p class="outcomes__hypothesis" data-reveal data-i18n="outcomes.hypothesis">Hipótesis principal: si los gerentes de logística tienen visibilidad inmediata con un dashboard de KPIs en tiempo real, aumentará la retención de clientes que hoy dependen de reportes manuales dispersos.</p>
+  </div>
+</section>
+
+<!-- ═════════ 6 · PLANES ═════════ -->
+<section class="plans" id="planes">
   <div class="container">
-    <div class="domain__head">
-      <p class="eyebrow" data-reveal data-i18n="domain.eyebrow">Arquitectura del dominio</p>
-      <h2 class="section-title" data-reveal data-i18n="domain.title">Seis dominios, un solo sistema</h2>
-      <p class="domain__lede" data-reveal data-i18n="domain.lede">BevTrace divide su lógica de negocio en Bounded Contexts (Domain-Driven Design) que colaboran mediante eventos de dominio.</p>
+    <div class="plans__head" data-reveal>
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="plans.eyebrow">Planes</p>
+        <h2 class="section-title" data-i18n="plans.title">Precios simples y escalables</h2>
+        <p class="section-lede" data-i18n="plans.lede">Todos los planes incluyen conectividad IoT básica y registros de trazabilidad.</p>
+      </div>
+      <div class="billing-toggle" role="group" aria-label="Facturación">
+        <button type="button" class="billing-toggle__btn is-active" data-billing="monthly" aria-pressed="true" data-i18n="plans.monthly">Mensual</button>
+        <button type="button" class="billing-toggle__btn" data-billing="annual" aria-pressed="false" data-i18n="plans.annual">Anual (-20%)</button>
+      </div>
     </div>
 
-    <div class="domain__grid">
-      <article class="domain-card" data-reveal>
-        <span class="domain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg>
-        </span>
-        <h3 data-i18n="domain1.title">Inventory Management</h3>
-        <p class="domain-card__desc" data-i18n="domain1.desc">Controla lotes, zonas de almacén y mermas (waste) por unidad de producto.</p>
-        <span class="domain-card__root">Aggregate Root · ProductBatch</span>
+    <div class="plan-grid">
+      <article class="plan-card" data-reveal>
+        <h3 data-i18n="plan1.name">Essential</h3>
+        <div class="plan-card__price" data-price data-monthly="299" data-annual="239">
+          <strong>S/ <span data-price-value>299</span></strong>
+          <span data-i18n="plans.perMonth">/ mes</span>
+        </div>
+        <p class="plan-card__billed" data-billed-note data-i18n="plans.billedAnnual" hidden>Facturado anualmente</p>
+        <p class="plan-card__desc" data-i18n="plan1.desc">Ideal para distribuidores regionales pequeños que buscan digitalizar el seguimiento básico.</p>
+        <ul class="plan-card__list">
+          <li data-i18n="plan1.f1">Hasta 5 rutas activas</li>
+          <li data-i18n="plan1.f2">Cola de despachos básica</li>
+          <li data-i18n="plan1.f3">Soporte por correo</li>
+          <li data-i18n="plan1.f4">Reportes diarios de desempeño</li>
+          <li data-i18n="plan1.f5">100 conexiones de nodos IoT</li>
+        </ul>
+        <a href="https://bev-trace-front-end.vercel.app" class="btn btn--outline-teal btn--block" data-hover data-i18n="plans.trial">Iniciar prueba gratis</a>
       </article>
 
-      <article class="domain-card" data-reveal>
-        <span class="domain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="14" height="10" rx="1.5"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.8"/><circle cx="18" cy="19" r="1.8"/></svg>
-        </span>
-        <h3 data-i18n="domain2.title">Dispatch Management</h3>
-        <p class="domain-card__desc" data-i18n="domain2.desc">Orquesta la carga, el vehículo, el chofer y la ruta planificada de cada salida.</p>
-        <span class="domain-card__root">Aggregate Root · DispatchOrder</span>
+      <article class="plan-card plan-card--featured" data-reveal>
+        <span class="plan-card__flag" data-i18n="plans.popular">Más popular</span>
+        <h3 data-i18n="plan2.name">Professional</h3>
+        <div class="plan-card__price" data-price data-monthly="699" data-annual="559">
+          <strong>S/ <span data-price-value>699</span></strong>
+          <span data-i18n="plans.perMonth">/ mes</span>
+        </div>
+        <p class="plan-card__billed" data-billed-note data-i18n="plans.billedAnnual" hidden>Facturado anualmente</p>
+        <p class="plan-card__desc" data-i18n="plan2.desc">Visibilidad total para plantas de bebidas medianas en crecimiento.</p>
+        <ul class="plan-card__list">
+          <li data-i18n="plan2.f1">Rutas activas ilimitadas</li>
+          <li data-i18n="plan2.f2">Mapa de trazabilidad en tiempo real</li>
+          <li data-i18n="plan2.f3">Soporte prioritario 24/7</li>
+          <li data-i18n="plan2.f4">Paneles de KPI personalizados</li>
+          <li data-i18n="plan2.f5">500 conexiones de nodos IoT</li>
+          <li data-i18n="plan2.f6">Acceso avanzado a la API</li>
+        </ul>
+        <a href="https://bev-trace-front-end.vercel.app" class="btn btn--teal btn--block" data-hover data-i18n="plans.trial">Iniciar prueba gratis</a>
       </article>
 
-      <article class="domain-card domain-card--highlight" data-reveal>
-        <span class="domain-card__ribbon" data-i18n="domain3.ribbon">Core Domain</span>
-        <span class="domain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        </span>
-        <h3 data-i18n="domain3.title">Product Traceability</h3>
-        <p class="domain-card__desc" data-i18n="domain3.desc">Bitácora inmutable de checkpoints en ruta y entrega validada con firma del cliente.</p>
-        <span class="domain-card__root">Aggregate Root · TraceabilityLog</span>
-      </article>
-
-      <article class="domain-card" data-reveal>
-        <span class="domain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5.5 5.5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none"/></svg>
-        </span>
-        <h3 data-i18n="domain4.title">IoT Telemetry</h3>
-        <p class="domain-card__desc" data-i18n="domain4.desc">Ingiere ubicación y estado de conexión de cada dispositivo instalado en los vehículos.</p>
-        <span class="domain-card__root">Aggregate Root · TelemetryDevice</span>
-      </article>
-
-      <article class="domain-card" data-reveal>
-        <span class="domain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.4c0 .8-.3 1.6-.9 2.2L4.5 15.2c-.7.7-.2 1.8.7 1.8h13.6c.9 0 1.4-1.1.7-1.8l-1.6-1.6c-.6-.6-.9-1.4-.9-2.2V8a5 5 0 0 0-5-5z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
-        </span>
-        <h3 data-i18n="domain5.title">Incident &amp; Alert Management</h3>
-        <p class="domain-card__desc" data-i18n="domain5.desc">Motor de reglas que detecta anomalías y registra las acciones correctivas aplicadas.</p>
-        <span class="domain-card__root">Aggregate Root · IncidentRecord</span>
-      </article>
-
-      <article class="domain-card" data-reveal>
-        <span class="domain-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M10 19V5M16 19v-7M4 19h16"/></svg>
-        </span>
-        <h3 data-i18n="domain6.title">Operations Analytics</h3>
-        <p class="domain-card__desc" data-i18n="domain6.desc">Consolida KPIs logísticos y métricas financieras de merma (shrinkage) por periodo.</p>
-        <span class="domain-card__root">Aggregate Root · LogisticsReport</span>
+      <article class="plan-card" data-reveal>
+        <h3 data-i18n="plan3.name">Enterprise</h3>
+        <div class="plan-card__price">
+          <strong data-i18n="plans.custom">A medida</strong>
+        </div>
+        <p class="plan-card__desc" data-i18n="plan3.desc">Infraestructura logística global con integraciones a medida y soporte en sitio.</p>
+        <ul class="plan-card__list">
+          <li data-i18n="plan3.f1">Gestión multi-almacén</li>
+          <li data-i18n="plan3.f2">Integración de hardware IoT a medida</li>
+          <li data-i18n="plan3.f3">Gerente de cuenta dedicado</li>
+          <li data-i18n="plan3.f4">Opción de despliegue on-premise</li>
+          <li data-i18n="plan3.f5">Capacidades de marca blanca</li>
+          <li data-i18n="plan3.f6">Garantías de SLA</li>
+        </ul>
+        <a href="#contacto" class="btn btn--outline-teal btn--block" data-hover data-i18n="plans.sales">Contactar a ventas</a>
       </article>
     </div>
+    <p class="plans__note" data-i18n="plans.note">Precios referenciales del proyecto académico.</p>
   </div>
 </section>
 
+<!-- ═════════ 7 · EQUIPO + VIDEO DEL EQUIPO ═════════ -->
 <section class="team" id="equipo">
-  <div class="container team__head">
-    <p class="eyebrow eyebrow--light" data-reveal data-i18n="team.eyebrow">CodeCraft</p>
-    <h2 data-reveal data-i18n="team.title">El equipo detrás de BevTrace</h2>
-    <p class="team__lede" data-reveal data-i18n="team.lede">Estudiantes de Ingeniería de Software construyendo BevTrace de principio a fin. Arrastra para conocer al equipo.</p>
-  </div>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow eyebrow--light" data-i18n="team.eyebrow">CodeCraft</p>
+      <h2 class="section-title" data-i18n="team.title">El equipo detrás de BevTrace</h2>
+      <p class="section-lede" data-i18n="team.lede">Dos estudiantes de Ingeniería de Software de la UPC construyendo BevTrace de principio a fin.</p>
+    </div>
 
-  <div class="team__track" data-drag-track>
-    <article class="team-card">
-      <img class="team-card__photo" src="assets/team/mauricio.jpg" alt="Mauricio Castillo Yataco" />
-      <div class="team-card__info">
-        <h3>Castillo Yataco, Mauricio Sebastian</h3>
-        <span class="team-card__role" data-i18n="member.role">Ingeniería de Software</span>
-        <p data-i18n="member.generic">Miembro del equipo CodeCraft en el desarrollo de BevTrace.</p>
-      </div>
-    </article>
+    <div class="team__layout">
+      <!-- VIDEO 2 · SOBRE EL EQUIPO
+           Para activarlo: pega el link o el ID de YouTube en data-video -->
+      <figure class="video-card video-card--dark" data-reveal>
+        <div class="video-slot" data-video-slot data-video="https://www.youtube.com/watch?v=u31qwQUeGuM" data-video-title="CodeCraft">
+          <div class="video-slot__cover video-slot__cover--team" aria-hidden="true">
+            <img src="assets/team/mauricio.jpg" alt="" />
+            <img src="assets/team/enrique.jpg" alt="" />
+          </div>
+          <div class="video-slot__shade video-slot__shade--soft"></div>
+          <button type="button" class="video-slot__play" data-video-play data-i18n-attr="aria-label:video.play" aria-label="Reproducir video">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>
+          </button>
+          <span class="video-slot__soon" data-i18n="video.soon">Video próximamente</span>
+        </div>
+        <figcaption>
+          <span class="badge badge--glass" data-i18n="video.teamTag">Video del equipo</span>
+          <strong data-i18n="video.teamTitle">Conoce a CodeCraft</strong>
+        </figcaption>
+      </figure>
 
-    <article class="team-card">
-      <img class="team-card__photo" src="assets/team/danitza.jpg" alt="Danitza Ivonne Heredia Hoyos" />
-      <div class="team-card__info">
-        <h3>Heredia Hoyos, Danitza Ivonne</h3>
-        <span class="team-card__role" data-i18n="member.role">Ingeniería de Software</span>
-        <p data-i18n="member.generic">Miembro del equipo CodeCraft en el desarrollo de BevTrace.</p>
-      </div>
-    </article>
+      <div class="team__members">
+        <article class="team-card" data-reveal>
+          <img class="team-card__photo" src="assets/team/mauricio.jpg" alt="Mauricio Sebastian Castillo Yataco" />
+          <div class="team-card__info">
+            <h3>Mauricio Sebastian Castillo Yataco</h3>
+            <span class="team-card__role" data-i18n="member.role">Ingeniería de Software</span>
+            <p data-i18n="member1.bio">Miembro del equipo CodeCraft en el desarrollo de BevTrace.</p>
+          </div>
+        </article>
 
-    <article class="team-card">
-      <img class="team-card__photo" src="assets/team/enrique.jpg" alt="Enrique Augusto Ochoa Prado" />
-      <div class="team-card__info">
-        <h3>Ochoa Prado, Enrique Augusto</h3>
-        <span class="team-card__role" data-i18n="member.role">Ingeniería de Software</span>
-        <p data-i18n="member.generic">Miembro del equipo CodeCraft en el desarrollo de BevTrace.</p>
+        <article class="team-card" data-reveal>
+          <img class="team-card__photo" src="assets/team/enrique.jpg" alt="Enrique Augusto Ochoa Prado" />
+          <div class="team-card__info">
+            <h3>Enrique Augusto Ochoa Prado</h3>
+            <span class="team-card__role" data-i18n="member.role">Ingeniería de Software</span>
+            <p data-i18n="member2.bio">Miembro del equipo CodeCraft en el desarrollo de BevTrace.</p>
+          </div>
+        </article>
       </div>
-    </article>
+    </div>
   </div>
 </section>
 
-<section class="final-cta" id="cta">
+<!-- ═════════ 8 · CIERRE / CONTACTO ═════════ -->
+<section class="final-cta" id="cierre">
   <div class="container final-cta__inner">
-    <h2 data-reveal data-i18n="finalcta.title">¿Listo para eliminar las mermas de tu cadena de distribución?</h2>
-    <p data-reveal data-i18n="finalcta.paragraph">BevTrace centraliza inventarios, despachos y trazabilidad IoT en un solo sistema, desde el almacén hasta el destino final.</p>
-    <div class="final-cta__actions" data-reveal>
-      <span class="magnetic-target" data-magnetic data-magnetic-max="16">
-        <a href="#solucion" class="btn btn--warm" data-hover data-i18n="finalcta.cta1">Ver la solución</a>
-      </span>
-      <span class="magnetic-target" data-magnetic data-magnetic-max="16">
-        <a href="#equipo" class="btn btn--outline-light" data-hover data-i18n="finalcta.cta2">Conoce al equipo</a>
-      </span>
-    </div>
+    <span class="final-cta__logo" data-reveal><img src="assets/logos/logo-full-white.png" alt="BevTrace" /></span>
+    <h2 data-reveal data-i18n="contact.title">¿Listo para eliminar las mermas de tu cadena de distribución?</h2>
+    <p data-reveal data-i18n="contact.paragraph">BevTrace centraliza inventarios, despachos y trazabilidad IoT en un solo sistema, desde el almacén hasta el destino final.</p>
   </div>
 </section>
 
 </main>
 
-<footer class="site-footer">
+<!-- ═════════ FOOTER ═════════ -->
+<footer class="site-footer" id="contacto">
   <div class="container site-footer__grid">
-    <div class="site-footer__col">
+    <div class="site-footer__col site-footer__col--brand">
       <a href="#home" class="site-footer__brand">
         <img src="assets/logos/logo-mark-white.png" alt="" class="site-footer__mark" />
         <span class="site-footer__wordmark">BevTrace</span>
       </a>
-      <p data-i18n="footer.tagline">Un proyecto de <strong>CodeCraft</strong>, plataforma SaaS de trazabilidad inteligente para distribución de bebidas.</p>
+      <p data-i18n="footer.tagline">Un proyecto de <strong>CodeCraft</strong>: plataforma SaaS de trazabilidad inteligente para distribución de bebidas.</p>
     </div>
 
     <nav class="site-footer__col site-footer__links">
-      <span class="site-footer__col-title" data-i18n="footer.col1Title">Plataforma</span>
-      <a href="#producto" data-i18n="footer.link1">Cómo funciona</a>
-      <a href="#segmentos" data-i18n="footer.link2">A quién sirve</a>
-      <a href="#dominio" data-i18n="footer.link3">Arquitectura del dominio</a>
-      <a href="#resultados" data-i18n="footer.link4">Resultados esperados</a>
+      <span class="site-footer__col-title" data-i18n="footer.colProduct">Producto</span>
+      <a href="#problema" data-i18n="footer.linkSolution">Solución</a>
+      <a href="#funciones" data-i18n="footer.linkFeatures">Funciones</a>
+      <a href="#planes" data-i18n="footer.linkPlans">Planes</a>
+      <a href="#resultados" data-i18n="footer.linkResults">Resultados esperados</a>
     </nav>
 
     <nav class="site-footer__col site-footer__links">
-      <span class="site-footer__col-title" data-i18n="footer.col2Title">Startup</span>
-      <a href="#equipo" data-i18n="footer.link5">Equipo</a>
-      <a href="#home" data-i18n="footer.link6">Inicio</a>
-      <a href="#" data-legal="terms" data-i18n="footer.link7">Términos</a>
-      <a href="#" data-legal="privacy" data-i18n="footer.link8">Privacidad</a>
+      <span class="site-footer__col-title" data-i18n="footer.colProject">Proyecto</span>
+      <a href="#equipo" data-i18n="footer.linkTeam">Equipo</a>
+      <a href="https://github.com/Codecraft-16692" target="_blank" rel="noopener">GitHub</a>
     </nav>
 
-    <div class="site-footer__col">
-      <span class="site-footer__col-title" data-i18n="footer.col3Title">Síguenos</span>
-      <div class="site-footer__social">
-        <a href="#" aria-label="LinkedIn" data-hover>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.24h4.5V23H.24V8.24zM8.5 8.24h4.32v2.02h.06c.6-1.14 2.07-2.34 4.26-2.34 4.55 0 5.39 3 5.39 6.9V23h-4.5v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23H8.5V8.24z"/></svg>
-        </a>
-        <a href="#" aria-label="Instagram" data-hover>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" aria-label="YouTube" data-hover>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.23-1.64-.94-2.36c-.9-.94-1.9-.94-2.36-1C17 2.5 12 2.5 12 2.5h-.01s-5 0-8.19.34c-.46.06-1.46.06-2.36 1C.73 4.56.5 6.2.5 6.2S.25 8.12.25 10.05v1.8c0 1.93.25 3.85.25 3.85s.23 1.64.94 2.36c.9.94 2.08.9 2.6 1 1.9.18 8 .24 8 .24s5.01-.01 8.2-.35c.46-.06 1.46-.06 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.92.25-3.85v-1.8c0-1.93-.25-3.85-.25-3.85zM9.6 14.6V7.7l6.4 3.46-6.4 3.44z"/></svg>
-        </a>
-      </div>
-    </div>
+    <nav class="site-footer__col site-footer__links">
+      <span class="site-footer__col-title" data-i18n="footer.linkContact">Contacto</span>
+      <a href="mailto:contacto@bevtrace.example">contacto@bevtrace.example</a>
+      <span class="site-footer__note" data-i18n="footer.contactNote">Te respondemos lo antes posible.</span>
+    </nav>
+
+    <nav class="site-footer__col site-footer__links">
+      <span class="site-footer__col-title" data-i18n="footer.colLegal">Legal</span>
+      <a href="legal/terminos.html" data-i18n="footer.linkTerms">Términos de servicio</a>
+      <a href="legal/privacidad.html" data-i18n="footer.linkPrivacy">Política de privacidad</a>
+      <span class="site-footer__note" data-i18n="footer.legalNote">Reglas claras y en lenguaje simple.</span>
+    </nav>
   </div>
 
   <div class="container site-footer__bottom">
-    <span data-i18n="footer.copyright">© 2026 CodeCraft · BevTrace. Proyecto académico de Ingeniería de Software.</span>
-  </div>
-
-  <div class="legal-drawer" data-legal-drawer hidden>
-    <div class="legal-drawer__backdrop" data-legal-close></div>
-    <aside class="legal-drawer__panel">
-      <button class="legal-drawer__close" data-legal-close aria-label="Cerrar">&times;</button>
-      <div data-legal-content="terms">
-        <h3 data-i18n="legal.termsTitle">Términos de uso</h3>
-        <p data-i18n="legal.termsBody">Contenido de ejemplo para el proyecto académico BevTrace.</p>
-      </div>
-      <div data-legal-content="privacy" hidden>
-        <h3 data-i18n="legal.privacyTitle">Política de privacidad</h3>
-        <p data-i18n="legal.privacyBody">Contenido de ejemplo para el proyecto académico BevTrace.</p>
-      </div>
-    </aside>
+    <span data-i18n="footer.copyright">© 2026 CodeCraft · BevTrace. Proyecto académico de Ingeniería de Software, UPC.</span>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
