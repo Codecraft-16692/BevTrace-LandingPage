@@ -56,7 +56,7 @@
     });
   });
 
-  applyLanguage(storedLang() || 'es');
+  applyLanguage(storedLang() || 'en');
 
   const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 

@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   const KEY = 'bevtrace-lang';
-  const get = () => { try { const l = localStorage.getItem(KEY); return l === 'en' ? 'en' : 'es'; } catch (e) { return 'es'; } };
+  const get = () => { try { const l = localStorage.getItem(KEY); return l === 'es' ? 'es' : 'en'; } catch (e) { return 'en'; } };
   const apply = (lang) => {
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-lang-option]').forEach((b) => b.classList.toggle('is-active', b.dataset.langOption === lang));
