@@ -49,7 +49,9 @@
       <span></span><span></span>
     </button>
   </div>
+</header>
 
+<!-- Menú móvil fuera del header: el backdrop-filter del header (al hacer scroll) recortaba aquí los elementos position:fixed -->
   <div class="drawer-backdrop" data-drawer-backdrop></div>
   <aside class="drawer" data-drawer>
     <button class="drawer__close" type="button" data-drawer-close data-i18n-attr="aria-label:nav.close" aria-label="Cerrar menú">&times;</button>
@@ -67,7 +69,6 @@
     </nav>
     <a href="https://bev-trace-front-end.vercel.app" class="btn btn--primary" data-i18n="cta.primary">Probar BevTrace</a>
   </aside>
-</header>
 
 <!-- ═════════ HERO ═════════ -->
 <section class="hero" id="home">
@@ -517,6 +518,14 @@
     <span class="final-cta__logo" data-reveal><img src="assets/logos/logo-full-white.png" alt="BevTrace" /></span>
     <h2 data-reveal data-i18n="contact.title">¿Listo para eliminar las mermas de tu cadena de distribución?</h2>
     <p data-reveal data-i18n="contact.paragraph">BevTrace centraliza inventarios, despachos y trazabilidad IoT en un solo sistema, desde el almacén hasta el destino final.</p>
+    <div class="cta-group cta-group--center" data-reveal>
+      <span class="magnetic-target" data-magnetic data-magnetic-max="14">
+        <a href="https://bev-trace-front-end.vercel.app" class="btn btn--primary" data-hover data-i18n="cta.primary">Probar BevTrace</a>
+      </span>
+      <span class="magnetic-target" data-magnetic data-magnetic-max="14">
+        <a href="#planes" class="btn btn--ghost-dark" data-hover data-i18n="cta.viewPlans">Ver planes</a>
+      </span>
+    </div>
   </div>
 </section>
 

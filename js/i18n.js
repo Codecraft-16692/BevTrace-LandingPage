@@ -147,6 +147,7 @@ window.BEVTRACE_I18N = {
 
     'contact.title': '¿Listo para eliminar las mermas de tu cadena de distribución?',
     'contact.paragraph': 'BevTrace centraliza inventarios, despachos y trazabilidad IoT en un solo sistema, desde el almacén hasta el destino final.',
+    'cta.viewPlans': 'Ver planes',
 
     'footer.tagline': 'Un proyecto de <strong>CodeCraft</strong>: plataforma SaaS de trazabilidad inteligente para distribución de bebidas.',
     'footer.colProduct': 'Producto',
@@ -311,6 +312,7 @@ window.BEVTRACE_I18N = {
 
     'contact.title': 'Ready to eliminate shrinkage from your distribution chain?',
     'contact.paragraph': 'BevTrace centralizes inventory, dispatches and IoT traceability in one system, from the warehouse to the final destination.',
+    'cta.viewPlans': 'See plans',
 
     'footer.tagline': 'A project by <strong>CodeCraft</strong>: a smart traceability SaaS platform for beverage distribution.',
     'footer.colProduct': 'Product',
