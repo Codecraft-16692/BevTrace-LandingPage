@@ -109,10 +109,65 @@
   const drawer = document.querySelector('[data-drawer]');
   const backdrop = document.querySelector('[data-drawer-backdrop]');
   const toggle = document.querySelector('[data-drawer-toggle]');
+  /* El menú es transparente: cada elemento revisa el fondo que tiene debajo
+     y pasa a letras oscuras (.is-on-light) cuando ese fondo es claro. */
+  const adaptTargets = drawer
+    ? [drawer.querySelector('.drawer__close'), drawer.querySelector('.lang-switch--drawer'), ...drawer.querySelectorAll('.drawer__links a')].filter(Boolean)
+    : [];
+  const colorsIn = (value) => Array.from(value.matchAll(/rgba?\(([^)]+)\)/g), (m) => {
+    const [r, g, b, a = 1] = m[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+    return [r, g, b, a];
+  });
+  const luminance = ([r, g, b]) => {
+    const ch = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+    return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b);
+  };
+  // Luminosidad de lo que pinta un elemento (color o degradado de fondo), o null si es transparente.
+  const paintOf = (el) => {
+    if (/^(VIDEO|IMG|CANVAS|IFRAME)$/.test(el.tagName)) return 0.1; // los videos y fotos del landing llevan capa oscura
+    const cs = getComputedStyle(el);
+    const [bg] = colorsIn(cs.backgroundColor);
+    if (bg && bg[3] >= 0.5) return luminance(bg);
+    if (cs.backgroundImage !== 'none') {
+      const stops = colorsIn(cs.backgroundImage);
+      const alpha = stops.reduce((s, c) => s + c[3], 0);
+      if (stops.length && alpha / stops.length >= 0.5) return stops.reduce((s, c) => s + luminance(c) * c[3], 0) / alpha;
+    }
+    return null;
+  };
+  const isLightAt = (x, y) => {
+    for (const el of document.elementsFromPoint(x, y)) {
+      if (drawer.contains(el) || el === backdrop) continue;
+      const lum = paintOf(el);
+      if (lum !== null) return lum > 0.4;
+    }
+    return true; // el fondo del body es blanco
+  };
+  const adaptDrawer = () => {
+    drawer.classList.toggle('is-at-top', window.scrollY <= 40); // mismo umbral que el header
+    // Posición final del menú aunque todavía esté entrando con la animación
+    const dx = (window.innerWidth - drawer.offsetWidth) - drawer.getBoundingClientRect().left;
+    adaptTargets.forEach((el) => {
+      let r = el.getBoundingClientRect();
+      if (el.tagName === 'A') { const range = document.createRange(); range.selectNodeContents(el); r = range.getBoundingClientRect(); }
+      const y = r.top + r.height / 2;
+      const votes = [0.15, 0.5, 0.85].filter((f) => isLightAt(r.left + dx + r.width * f, y)).length;
+      el.classList.toggle('is-on-light', votes >= 2);
+    });
+  };
+  let adaptFrame = 0;
+  const scheduleAdapt = () => {
+    if (!drawer.classList.contains('is-open') || adaptFrame) return;
+    adaptFrame = requestAnimationFrame(() => { adaptFrame = 0; adaptDrawer(); });
+  };
+  window.addEventListener('scroll', scheduleAdapt, { passive: true });
+  window.addEventListener('resize', scheduleAdapt);
+
   const setDrawer = (open) => {
     drawer.classList.toggle('is-open', open);
     backdrop.classList.toggle('is-open', open);
     toggle?.setAttribute('aria-expanded', String(open));
+    if (open) adaptDrawer();
   };
   toggle?.addEventListener('click', () => setDrawer(true));
   document.querySelector('[data-drawer-close]')?.addEventListener('click', () => setDrawer(false));

@@ -145,14 +145,26 @@ p{ color:var(--color-ink-soft); }
 .site-header__burger{ display:none; width:42px; height:42px; border-radius:50%; align-items:center; justify-content:center; flex-direction:column; gap:5px; }
 .site-header__burger span{ width:16px; height:1.5px; background:var(--color-white); border-radius:2px; }
 
-.drawer-backdrop{ position:fixed; inset:0; background:rgba(8,47,52,0.55); backdrop-filter:blur(6px); opacity:0; pointer-events:none; transition:opacity var(--transition-normal); z-index:var(--z-drawer); }
+.drawer-backdrop{ position:fixed; inset:0; background:transparent; opacity:0; pointer-events:none; transition:opacity var(--transition-normal); z-index:var(--z-drawer); }
 .drawer-backdrop.is-open{ opacity:1; pointer-events:auto; }
-.drawer{ position:fixed; top:0; right:0; bottom:0; width:min(86vw,360px); background:var(--gradient-dark); z-index:calc(var(--z-drawer) + 1); padding:2rem 1.75rem; transform:translateX(100%); transition:transform var(--transition-normal); display:flex; flex-direction:column; gap:1.5rem; }
+.drawer{ position:fixed; top:0; right:0; bottom:0; width:min(86vw,360px); background:transparent; z-index:calc(var(--z-drawer) + 1); padding:2rem 1.75rem; transform:translateX(100%); transition:transform var(--transition-normal); display:flex; flex-direction:column; gap:1.5rem; }
 .drawer.is-open{ transform:translateX(0); }
 .drawer__close{ align-self:flex-end; width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); color:var(--color-white); font-size:1.25rem; }
 .drawer__links{ display:flex; flex-direction:column; gap:1rem; }
 .drawer__links a{ color:var(--color-white); font-size:1.35rem; font-weight:600; }
-.drawer .btn{ margin-top:auto; }
+.drawer .btn{ margin-top:0.5rem; transition:opacity 250ms ease, transform 250ms ease, visibility 250ms; }
+/* Arriba del todo el hero ya muestra "Probar BevTrace": el del menú aparece al bajar */
+.drawer.is-at-top .btn{ opacity:0; visibility:hidden; transform:translateY(8px); pointer-events:none; }
+/* Menú transparente: main.js marca con .is-on-light cada elemento que queda sobre un fondo claro */
+.drawer__close,.drawer__links a,.lang-switch--drawer,.lang-switch--drawer .lang-switch__option{ transition:color 250ms ease, border-color 250ms ease, background 250ms ease, text-shadow 250ms ease; }
+.drawer__links a{ text-shadow:0 0 2px rgba(4,20,25,0.9), 0 0 8px rgba(4,20,25,0.85), 0 0 18px rgba(4,20,25,0.7); }
+.drawer__links a.is-on-light{ color:var(--color-petrol-ink); text-shadow:0 0 2px #FFFFFF, 0 0 8px #FFFFFF, 0 0 18px rgba(255,255,255,0.95); }
+.site-header__burger{ transition:opacity 250ms ease; }
+.site-header__burger[aria-expanded="true"]{ opacity:0; pointer-events:none; }
+.drawer__close.is-on-light{ color:var(--color-petrol-ink); border-color:rgba(8,47,52,0.3); }
+.lang-switch--drawer.is-on-light{ background:rgba(8,47,52,0.06); border-color:rgba(8,47,52,0.2); }
+.lang-switch--drawer.is-on-light .lang-switch__option{ color:rgba(8,47,52,0.6); }
+.lang-switch--drawer.is-on-light .lang-switch__option.is-active{ background:var(--color-petrol); color:var(--color-white); }
 
 /* ───────── Hero ───────── */
 .hero{ position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding:8rem var(--space-layout-x) 8rem; background:var(--gradient-dark); overflow:hidden; isolation:isolate; }
